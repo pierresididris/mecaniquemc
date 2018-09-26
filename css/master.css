@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -27,5 +28,74 @@ figure {
 
 html {
   font-size: 100%; }
+
+header .navbar a {
+  text-transform: uppercase; }
+  header .navbar a:hover {
+    color: #FFB80E !important; }
+  header .navbar a.active {
+    color: #FFB80E !important; }
+
+body .presentation {
+  text-align: center;
+  padding: 20px 0;
+  background: url(../img/garett-mizunaka-15709-unsplash.jpg) no-repeat center;
+  -webkit-background-size: cover;
+  /* pour anciens Chrome et Safari */
+  background-size: cover;
+  /* version standardis├®e */ }
+  body .presentation h2 {
+    color: white;
+    font-style: italic; }
+  body .presentation h1 {
+    font-size: 40px !important;
+    color: white; }
+  body .presentation p {
+    color: white; }
+  body .presentation .rdv_button {
+    background-color: #FFB80E;
+    color: white;
+    border: 2px solid #FFB80E; }
+    body .presentation .rdv_button:hover {
+      background-color: transparent; }
+  body .presentation .contact_button {
+    background: none;
+    color: white;
+    border: 2px solid white; }
+    body .presentation .contact_button:hover {
+      background-color: white;
+      color: #FFB80E; }
+body .colaborator {
+  background: red; }
+body .our_prestation {
+  text-align: center; }
+  body .our_prestation h3 {
+    position: relative;
+    text-transform: uppercase;
+    color: grey;
+    margin: 20px 0;
+    z-index: 1; }
+    body .our_prestation h3:before {
+      content: "";
+      position: absolute;
+      transform: rotate(140deg);
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #FFB80E;
+      z-index: 0; }
+    body .our_prestation h3:after {
+      content: "";
+      position: absolute;
+      transform: rotate(140deg);
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin-left: 33px;
+      margin-top: -20px;
+      background-color: #FFB80E;
+      z-index: 0; }
+  body .our_prestation p {
+    color: grey; }
 
 /*# sourceMappingURL=master.css.map */

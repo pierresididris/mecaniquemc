@@ -22,3 +22,94 @@
 html {
     font-size: 100%;
 }
+
+header{
+    .navbar{
+        a{
+            text-transform: uppercase;
+            &:hover{
+                color: $color-1 !important;
+            } 
+            &.active{
+                color: $color-1 !important;
+            }
+        }
+    }
+}
+body{
+    .presentation{
+        text-align: center;
+        padding: 20px 0;
+        background: url(../img/garett-mizunaka-15709-unsplash.jpg)no-repeat center ; 
+        -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+        background-size: cover; /* version standardisée */
+
+        h2{
+            color: white;
+            font-style: italic;
+        }
+        h1{
+            font-size: 40px !important;
+            color: white;
+        }
+        p{
+            color: white;
+        }
+        .rdv_button{
+            background-color: $color-1;
+            color: white;
+            border: 2px solid $color-1;
+            &:hover{
+                background-color: transparent;
+            }
+        }
+        .contact_button{
+            background: none;
+            color: white;
+            border: 2px solid white;
+            &:hover{
+                background-color: white;
+                color: $color-1;
+            }
+        }
+    }
+    .colaborator{
+        background: red;
+    }
+    .our_prestation{
+        text-align: center;
+
+        h3{
+            position: relative;
+            text-transform: uppercase;
+            color: grey;
+            margin: 20px 0;
+            z-index: 1;
+            &:before{
+                content: "";   
+                position: absolute; 
+                transform: rotate(140deg);
+                display: block;
+                width: 30px;
+                height: 3px;
+                background-color: $color-1;
+                z-index: 0;
+            }
+            &:after{
+                content: "";
+                position: absolute; 
+                transform: rotate(140deg);
+                display: block;
+                width: 30px;
+                height: 3px;
+                margin-left: 33px;
+                margin-top: -20px;
+                background-color: $color-1;
+                z-index: 0;
+            }
+        }
+        p{
+            color: grey;
+        }
+    }
+}
