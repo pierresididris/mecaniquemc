@@ -119,4 +119,51 @@ body{
             color: darkslategrey;
         }
     }
+    .form_section{
+        padding: 30px 0;
+        text-align: center;
+        background: url(../img/chad-kirchoff-202730-unsplash.jpg)no-repeat center ; 
+        -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+        background-size: cover; /* version standardisée */
+        h1{
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .ask{
+            color: white;
+            
+        }
+        .answer{
+            margin-bottom: 20px;
+            color: white;
+            .color{
+                color: $color-1;
+            }
+        }
+        .rdv_button{
+            background-color: $color-1;
+            color: white;
+            border: 2px solid $color-1;
+            &:hover{
+                background-color: transparent;
+            }
+        }
+        .contact_button{
+            background: none;
+            color: white;
+            border: 2px solid white;
+            &:hover{
+                background-color: white;
+                color: $color-1;
+            }
+        }
+    }
+}
+footer{
+    text-align: center;
+    background: black;
+    span{
+        color: white;
+    }
 }
