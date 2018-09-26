@@ -69,33 +69,40 @@ body .colaborator {
   background: red; }
 body .our_prestation {
   text-align: center; }
-  body .our_prestation h3 {
+  body .our_prestation .block_title {
     position: relative;
-    text-transform: uppercase;
-    color: grey;
-    margin: 20px 0;
-    z-index: 1; }
-    body .our_prestation h3:before {
+    height: 70px; }
+    body .our_prestation .block_title:before {
       content: "";
       position: absolute;
       transform: rotate(140deg);
       display: block;
       width: 30px;
       height: 3px;
+      margin-left: 1.8em;
+      margin-top: 2.0em;
       background-color: #FFB80E;
-      z-index: 0; }
-    body .our_prestation h3:after {
+      z-index: 2; }
+    body .our_prestation .block_title:after {
       content: "";
       position: absolute;
       transform: rotate(140deg);
       display: block;
       width: 30px;
       height: 3px;
-      margin-left: 33px;
-      margin-top: -20px;
+      margin-left: 1.8em;
+      margin-top: 2.5em;
       background-color: #FFB80E;
-      z-index: 0; }
+      z-index: 3; }
+    body .our_prestation .block_title h3 {
+      left: 0;
+      right: 0;
+      position: absolute;
+      text-transform: uppercase;
+      color: darkslategrey;
+      margin: 20px 0;
+      z-index: 4; }
   body .our_prestation p {
-    color: grey; }
+    color: darkslategrey; }
 
 /*# sourceMappingURL=master.css.map */
