@@ -15,8 +15,9 @@ if(empty($_POST['email']) && empty($_POST['phone'])){
 
     $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Port = 25;
+    $mail->Port = 587;
     $mail->Host = "smtp.gmail.com";
+    $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
     $mail->Username = 'beaug867@gmail.com';
     $mail->Password = 'M1234567890M';
@@ -24,9 +25,11 @@ if(empty($_POST['email']) && empty($_POST['phone'])){
     $mail->addReplyTo('pierre.sididris@live.fr');
     $mail->addAddress('mathieuferron06@gmail.com');
     $mail->Subject = 'First phpmailer mail';
-    $mail->Body = "$gender $firstnameCustomer $lastnameCustomer souhaiterez prendre rendez vous pour $goal
+    $mail->msgHtml( "
+    <div>$gender $firstnameCustomer $lastnameCustomer souhaiterez prendre rendez vous pour</div>
+    <div>$goal
     tel : $phoneCustomer
-    email: $emailCustomer";
+    email: $emailCustomer</div> ");
 
     if(!$mail->send()) {
         header('HTTP1/1 400');
