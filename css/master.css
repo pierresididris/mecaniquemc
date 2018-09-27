@@ -173,6 +173,9 @@ body .send-mail {
   body .send-mail:hover {
     background-color: transparent;
     color: black; }
+body .successFullMailSent {
+  position: absolute;
+  margin: 80% 10% 10% 80%; }
 
 footer {
   text-align: center;

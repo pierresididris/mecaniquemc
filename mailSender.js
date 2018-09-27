@@ -44,6 +44,10 @@ $(document).ready(function() {
                 },
                 success: function(data, status){
                     console.log('SUCCESS | data : ', data, ' | statut : ', status);
+                    $('#exampleModal').modal('toggle');
+                    var snackbar = document.getElementById("snackbar");
+                    snackbar.className = "show";
+                    setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
                 },
                 error: function(data, status, error){
                     console.log('ERROR | data :', data, ' | status : ', status, ' | error : ', error);
