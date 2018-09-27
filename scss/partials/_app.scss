@@ -24,7 +24,20 @@ html {
 }
 
 header{
+    background: white;
+    .navbar_logo{
+        height: 60px;
+        width: 130px;
+        background: url(../img/logo.jpg)no-repeat center ; 
+        -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+        background-size: cover;
+    }
+    .navbar-brand{
+       text-transform: uppercase;
+    }
     .navbar{
+        background: white !important;
+
         a{
             text-transform: uppercase;
             &:hover{
@@ -39,37 +52,46 @@ header{
 body{
     .presentation{
         text-align: center;
-        padding: 20px 0;
+        padding: 20px 0 0 0;
         background: url(../img/garett-mizunaka-15709-unsplash.jpg)no-repeat center ; 
         -webkit-background-size: cover; /* pour anciens Chrome et Safari */
         background-size: cover; /* version standardisée */
-
+        .svg_presentation{
+            margin-bottom: -0.5px;
+        }
         h2{
             color: white;
             font-style: italic;
+            margin-bottom: 20px;
         }
         h1{
-            font-size: 40px !important;
+            text-transform: uppercase;
+            // font-size: 40px !important;
             color: white;
+            margin-bottom: 20px;
         }
         p{
             color: white;
+            margin-bottom: 20px;
         }
-        .rdv_button{
-            background-color: $color-1;
-            color: white;
-            border: 2px solid $color-1;
-            &:hover{
-                background-color: transparent;
+        .block_button{
+            margin-bottom: 30px;
+            .rdv_button{
+                background-color: $color-1;
+                color: white;
+                border: 2px solid $color-1;
+                &:hover{
+                    background-color: transparent;
+                }
             }
-        }
-        .contact_button{
-            background: none;
-            color: white;
-            border: 2px solid white;
-            &:hover{
-                background-color: white;
-                color: $color-1;
+            .contact_button{
+                background: none;
+                color: white;
+                border: 2px solid white;
+                &:hover{
+                    background-color: white;
+                    color: $color-1;
+                }
             }
         }
     }
@@ -79,44 +101,99 @@ body{
     .our_prestation{
         text-align: center;
         .block_title{
-            position: relative;
             height: 70px;
-            &:before{ 
-                content: "";   
-                position: absolute; 
-                transform: rotate(140deg);
-                display: block;
-                width: 30px;
-                height: 3px;
-                margin-left: 1.8em;
-                margin-top: 2.0em;
-                background-color: $color-1;
-                z-index: 2;
-            }
-            &:after{
-                content: "";
-                position: absolute; 
-                transform: rotate(140deg);
-                display: block;
-                width: 30px;
-                height: 3px;
-                margin-left: 1.8em;
-                margin-top: 2.5em;
-                background-color: $color-1;
-                z-index: 3;
-            }
-            h3{
-                left: 0;
-                right: 0;
-                position: absolute;
-                text-transform: uppercase;
-                color: darkslategrey;
-                margin: 20px 0;
-                z-index: 4;     
+            .content{
+                width: 280px;
+                margin: auto;
+                position: relative;
+                h3{
+                    left: 0;
+                    right: 0;
+                    position: absolute;
+                    text-transform: uppercase;
+                    color: darkslategrey;
+                    margin: 20px 0;
+                    z-index: 4;     
+                }
+                &:before{
+                    content: "";   
+                    position: absolute; 
+                    transform: rotate(130deg);
+                    display: block;
+                    width: 35px;
+                    height: 3px;
+                    margin-left: 0.1em;
+                    margin-top: 1.9em;
+                    background-color: $color-1;
+                    z-index: 2;
+                }
+                &:after{
+                    content: "";
+                    position: absolute; 
+                    transform: rotate(130deg);
+                    display: block;
+                    width: 35px;
+                    height: 3px;
+                    margin-left: 0.6em;
+                    margin-top: 1.9em;
+                    background-color: $color-1;
+                    z-index: 3;
+                }
             }
         }
         p{
             color: darkslategrey;
         }
+    }
+    .form_section{
+        padding: 30px 0;
+        text-align: center;
+        background: url(../img/chad-kirchoff-202730-unsplash.jpg)no-repeat center ; 
+        -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+        background-size: cover; /* version standardisée */
+        h1{
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .ask{
+            color: white;
+            
+        }
+        .answer{
+            margin-bottom: 20px;
+            color: white;
+            .color{
+                color: $color-1;
+            }
+        }
+        .block_button{
+            margin-top: 30px;
+            .rdv_button{
+                background-color: $color-1;
+                color: white;
+                border: 2px solid $color-1;
+                &:hover{
+                    background-color: transparent;
+                }
+            }
+            .contact_button{
+                background: none;
+                color: white;
+                border: 2px solid white;
+                &:hover{
+                    background-color: white;
+                    color: $color-1;
+                }
+            }
+        }
+
+    }
+}
+footer{
+    text-align: center;
+    background: black;
+    span{
+        color: white;
     }
 }
