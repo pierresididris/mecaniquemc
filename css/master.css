@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Oswald");
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -42,8 +43,16 @@ header {
     text-transform: uppercase; }
   header .navbar {
     background: white !important; }
+    header .navbar .navbar-nav {
+      text-align: center; }
+      @media (min-width: 768px) {
+        header .navbar .navbar-nav {
+          margin-left: auto;
+          margin-right: 0px; } }
     header .navbar a {
-      text-transform: uppercase; }
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500; }
       header .navbar a:hover {
         color: #FFB80E !important; }
       header .navbar a.active {
@@ -52,50 +61,68 @@ header {
 body .presentation {
   text-align: center;
   padding: 20px 0 0 0;
-  background: url(../img/garett-mizunaka-15709-unsplash.jpg) no-repeat center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/garett-mizunaka-15709-unsplash.jpg) no-repeat center;
   -webkit-background-size: cover;
   /* pour anciens Chrome et Safari */
   background-size: cover;
   /* version standardis├®e */ }
   body .presentation .svg_presentation {
-    margin-bottom: -0.5px; }
+    margin-bottom: -3px; }
   body .presentation h2 {
     color: white;
     font-style: italic;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-family: "Oswald", sans-serif;
+    font-size: 17px; }
   body .presentation h1 {
     text-transform: uppercase;
     color: white;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600; }
   body .presentation p {
+    font-family: "Montserrat", sans-serif;
     color: white;
     margin-bottom: 20px; }
   body .presentation .block_button {
     margin-bottom: 30px; }
     body .presentation .block_button .rdv_button {
+      text-transform: uppercase;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
       background-color: #FFB80E;
       color: white;
       border: 2px solid #FFB80E; }
       body .presentation .block_button .rdv_button:hover {
         background-color: transparent; }
     body .presentation .block_button .contact_button {
+      text-transform: uppercase;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
       background: none;
       color: white;
       border: 2px solid white; }
       body .presentation .block_button .contact_button:hover {
         background-color: white;
         color: #FFB80E; }
+  @media (min-width: 768px) {
+    body .presentation {
+      padding: 100px 0px 0px 0px;
+      text-align: left; } }
 body .colaborator {
   background: red; }
 body .our_prestation {
   text-align: center; }
   body .our_prestation .block_title {
-    height: 70px; }
+    height: 70px;
+    margin-top: -10px; }
     body .our_prestation .block_title .content {
       width: 280px;
       margin: auto;
       position: relative; }
       body .our_prestation .block_title .content h3 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 600;
         left: 0;
         right: 0;
         position: absolute;
@@ -127,10 +154,44 @@ body .our_prestation {
         z-index: 3; }
   body .our_prestation p {
     color: darkslategrey; }
+  body .our_prestation .block_prestation {
+    margin-bottom: 20px; }
+    body .our_prestation .block_prestation .content {
+      -moz-box-shadow: 0px 0px 5px 5px #cfcfcf;
+      -webkit-box-shadow: 0px 0px 5px 5px #cfcfcf;
+      -o-box-shadow: 0px 0px 5px 5px #cfcfcf;
+      box-shadow: 0px 0px 5px 5px #cfcfcf;
+      filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=NaN, Strength=5); }
+      body .our_prestation .block_prestation .content .logo {
+        padding: 10px;
+        margin: auto;
+        width: 110px;
+        height: 110px; }
+        body .our_prestation .block_prestation .content .logo img {
+          max-width: 100%; }
+      body .our_prestation .block_prestation .content .title {
+        font-family: "Oswald", sans-serif;
+        font-weight: 600; }
+      body .our_prestation .block_prestation .content .text {
+        font-family: "Montserrat", sans-serif;
+        padding: 5px; }
+  @media (min-width: 768px) {
+    body .our_prestation {
+      text-align-last: left; }
+      body .our_prestation .block-title .block_content .content {
+        margin-left: 0px !important; }
+      body .our_prestation .edito {
+        text-align: left;
+        margin-bottom: 50px; }
+      body .our_prestation .block_prestation .title {
+        padding-left: 15px; }
+      body .our_prestation .block_prestation .text {
+        text-align: left;
+        padding: 5px 15px 15px 15px !important; } }
 body .form_section {
   padding: 30px 0;
   text-align: center;
-  background: url(../img/chad-kirchoff-202730-unsplash.jpg) no-repeat center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/chad-kirchoff-202730-unsplash.jpg) no-repeat center;
   -webkit-background-size: cover;
   /* pour anciens Chrome et Safari */
   background-size: cover;
@@ -138,7 +199,9 @@ body .form_section {
   body .form_section h1 {
     color: white;
     text-transform: uppercase;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600; }
   body .form_section .ask {
     color: white; }
   body .form_section .answer {
@@ -149,12 +212,18 @@ body .form_section {
   body .form_section .block_button {
     margin-top: 30px; }
     body .form_section .block_button .rdv_button {
+      text-transform: uppercase;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
       background-color: #FFB80E;
       color: white;
       border: 2px solid #FFB80E; }
       body .form_section .block_button .rdv_button:hover {
         background-color: transparent; }
     body .form_section .block_button .contact_button {
+      text-transform: uppercase;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
       background: none;
       color: white;
       border: 2px solid white; }
