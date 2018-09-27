@@ -56,7 +56,7 @@ $(document).ready(function() {
         }
      });
 
-     function validateEmail(email) {
+    function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
@@ -89,6 +89,38 @@ $(document).ready(function() {
         $('#messageModalRdv').attr('class', 'alert alert-danger')
         $('#messageModalRdv').text(message);
     }
+
+    $('#email').keyup(function(){
+        if(validateEmail($('#email').val())){
+            $('#mustFieldEmail').hide();
+        }else{
+            $('#mustFieldEmail').show();
+        }
+    });
+
+    $('#phone').keyup(function(){
+        if(validatePhone($('#phone').val())){
+            $('#mustFieldPhone').hide();
+        }else{
+            $('#mustFieldPhone').show();
+        }
+    })
+
+    $('#firstname').keyup(function(){
+        if($('#firstname').val() != ''){
+            $('#mustFieldFirstname').hide();
+        }else{
+            $('#mustFieldFirstname').show();
+        }
+    });
+
+    $('#lastname').keyup(function(){
+        if($('#lastname').val() != ''){
+            $('#mustFieldLastname').hide();
+        }else{
+            $('#mustFieldLastname').show();
+        }
+    });
 
 });
 
