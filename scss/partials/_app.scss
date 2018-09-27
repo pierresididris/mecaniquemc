@@ -81,7 +81,7 @@ body{
         .block_title{
             position: relative;
             height: 70px;
-            &:before{
+            &:before{ 
                 content: "";   
                 position: absolute; 
                 transform: rotate(140deg);
