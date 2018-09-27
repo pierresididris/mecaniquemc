@@ -3,7 +3,7 @@
 // ---------------------------------------------------------
 
 @mixin font-size($size) {
-    font-size: #{$size}px; //Fallback in px
+    font-size: #{$size}px; //Fallback in px 
     font-size: calculate-rem($size);
 }
 

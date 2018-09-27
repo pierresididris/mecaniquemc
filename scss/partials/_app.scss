@@ -189,6 +189,25 @@ body{
         }
 
     }
+
+    .mustField{
+        color: red;
+        padding-top: 0.5em;
+    }
+
+    .item-form{
+        margin-bottom: 1em;
+    }
+
+    .send-mail{
+        background-color: $color-1;
+        color: white;
+        border: 2px solid $color-1;
+        &:hover{
+            background-color: transparent;
+            color: black;
+        }
+    }
 }
 footer{
     text-align: center;

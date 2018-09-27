@@ -3,20 +3,25 @@ $(document).ready(function() {
         var mail = $('#email').val();
         var phone = $('#phone').val();
         
-        canReq = false;
+        var canReq;
         if(validateEmail(mail)){
             canReq = true;
         }else{
-            $('#messageModalRdv').attr('class', 'alert alert-danger')
-            $('#messageModalRdv').text("Veuillez saisir une adresse mail valide");
+            displayErrorRdv("Veuillez saisir une adresse mail");
+            canReq = false;
+        }
+        
+        if(validatePhone(phone)){
+            phone = formatePhone(phone);
+        }else{
+            if(canReq){
+                displayErrorRdv("Veuillez saisir un numéro de téléphone valide");
+                canReq = false;
+            }
         }
 
-        if(validatePhone(phone)){
-           canReq = true;
-           console.log('valide phone');
-        }else{
-            $('#messageModalRdv').attr('class', 'alert alert-danger')
-            $('#messageModalRdv').text("Veuillez saisir un numéro de téléphone valide");
+        if($('#firstname').val() == '' || $('#lastname').val() == ''){
+            displayErrorRdv("Veuillez saisir votre nom et prénom");
             canReq = false;
         }
 
@@ -35,6 +40,7 @@ $(document).ready(function() {
                     'lastname': $('#lastname').val(),
                     'firstname': $('#firstname').val(),
                     'goal': $('#goal').val(),
+                    'extraInfo': $('#extraInfo').val(),
                 },
                 success: function(data, status){
                     console.log('SUCCESS | data : ', data, ' | statut : ', status);
@@ -54,6 +60,30 @@ $(document).ready(function() {
     function validatePhone(phone){
         var re = /^\d{10}$/;
         return re.test(phone);
+    }
+
+    function formatePhone(phone){
+        var phoneFormated = [];
+        phoneFormated.push(phone.slice(0,2));
+        phoneFormated.push(phone.slice(2,4));
+        phoneFormated.push(phone.slice(4,6));
+        phoneFormated.push(phone.slice(6,8));
+        phoneFormated.push(phone.slice(8,10));
+        phone = '';
+        for(var i = 0; i < phoneFormated.length ; i++){
+            if(i > 0){
+                phone = phone+'.'+phoneFormated[i];
+            }else{
+                phone = phoneFormated[i];
+            }
+        }
+
+        return phone;
+    }
+
+    function displayErrorRdv(message){
+        $('#messageModalRdv').attr('class', 'alert alert-danger')
+        $('#messageModalRdv').text(message);
     }
 
 });

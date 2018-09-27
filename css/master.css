@@ -161,6 +161,18 @@ body .form_section {
       body .form_section .block_button .contact_button:hover {
         background-color: white;
         color: #FFB80E; }
+body .mustField {
+  color: red;
+  padding-top: 0.5em; }
+body .item-form {
+  margin-bottom: 1em; }
+body .send-mail {
+  background-color: #FFB80E;
+  color: white;
+  border: 2px solid #FFB80E; }
+  body .send-mail:hover {
+    background-color: transparent;
+    color: black; }
 
 footer {
   text-align: center;
