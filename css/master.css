@@ -29,79 +29,102 @@ figure {
 html {
   font-size: 100%; }
 
-header .navbar a {
-  text-transform: uppercase; }
-  header .navbar a:hover {
-    color: #FFB80E !important; }
-  header .navbar a.active {
-    color: #FFB80E !important; }
+header {
+  background: white; }
+  header .navbar_logo {
+    height: 60px;
+    width: 130px;
+    background: url(../img/logo.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    /* pour anciens Chrome et Safari */
+    background-size: cover; }
+  header .navbar-brand {
+    text-transform: uppercase; }
+  header .navbar {
+    background: white !important; }
+    header .navbar a {
+      text-transform: uppercase; }
+      header .navbar a:hover {
+        color: #FFB80E !important; }
+      header .navbar a.active {
+        color: #FFB80E !important; }
 
 body .presentation {
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   background: url(../img/garett-mizunaka-15709-unsplash.jpg) no-repeat center;
   -webkit-background-size: cover;
   /* pour anciens Chrome et Safari */
   background-size: cover;
   /* version standardis├®e */ }
+  body .presentation .svg_presentation {
+    margin-bottom: -0.5px; }
   body .presentation h2 {
     color: white;
-    font-style: italic; }
+    font-style: italic;
+    margin-bottom: 20px; }
   body .presentation h1 {
-    font-size: 40px !important;
-    color: white; }
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 20px; }
   body .presentation p {
-    color: white; }
-  body .presentation .rdv_button {
-    background-color: #FFB80E;
     color: white;
-    border: 2px solid #FFB80E; }
-    body .presentation .rdv_button:hover {
-      background-color: transparent; }
-  body .presentation .contact_button {
-    background: none;
-    color: white;
-    border: 2px solid white; }
-    body .presentation .contact_button:hover {
-      background-color: white;
-      color: #FFB80E; }
+    margin-bottom: 20px; }
+  body .presentation .block_button {
+    margin-bottom: 30px; }
+    body .presentation .block_button .rdv_button {
+      background-color: #FFB80E;
+      color: white;
+      border: 2px solid #FFB80E; }
+      body .presentation .block_button .rdv_button:hover {
+        background-color: transparent; }
+    body .presentation .block_button .contact_button {
+      background: none;
+      color: white;
+      border: 2px solid white; }
+      body .presentation .block_button .contact_button:hover {
+        background-color: white;
+        color: #FFB80E; }
 body .colaborator {
   background: red; }
 body .our_prestation {
   text-align: center; }
   body .our_prestation .block_title {
-    position: relative;
     height: 70px; }
-    body .our_prestation .block_title:before {
-      content: "";
-      position: absolute;
-      transform: rotate(140deg);
-      display: block;
-      width: 30px;
-      height: 3px;
-      margin-left: 1.8em;
-      margin-top: 2.0em;
-      background-color: #FFB80E;
-      z-index: 2; }
-    body .our_prestation .block_title:after {
-      content: "";
-      position: absolute;
-      transform: rotate(140deg);
-      display: block;
-      width: 30px;
-      height: 3px;
-      margin-left: 1.8em;
-      margin-top: 2.5em;
-      background-color: #FFB80E;
-      z-index: 3; }
-    body .our_prestation .block_title h3 {
-      left: 0;
-      right: 0;
-      position: absolute;
-      text-transform: uppercase;
-      color: darkslategrey;
-      margin: 20px 0;
-      z-index: 4; }
+    body .our_prestation .block_title .content {
+      width: 280px;
+      margin: auto;
+      position: relative; }
+      body .our_prestation .block_title .content h3 {
+        left: 0;
+        right: 0;
+        position: absolute;
+        text-transform: uppercase;
+        color: darkslategrey;
+        margin: 20px 0;
+        z-index: 4; }
+      body .our_prestation .block_title .content:before {
+        content: "";
+        position: absolute;
+        transform: rotate(130deg);
+        display: block;
+        width: 35px;
+        height: 3px;
+        margin-left: 0.1em;
+        margin-top: 1.9em;
+        background-color: #FFB80E;
+        z-index: 2; }
+      body .our_prestation .block_title .content:after {
+        content: "";
+        position: absolute;
+        transform: rotate(130deg);
+        display: block;
+        width: 35px;
+        height: 3px;
+        margin-left: 0.6em;
+        margin-top: 1.9em;
+        background-color: #FFB80E;
+        z-index: 3; }
   body .our_prestation p {
     color: darkslategrey; }
 body .form_section {
@@ -123,19 +146,21 @@ body .form_section {
     color: white; }
     body .form_section .answer .color {
       color: #FFB80E; }
-  body .form_section .rdv_button {
-    background-color: #FFB80E;
-    color: white;
-    border: 2px solid #FFB80E; }
-    body .form_section .rdv_button:hover {
-      background-color: transparent; }
-  body .form_section .contact_button {
-    background: none;
-    color: white;
-    border: 2px solid white; }
-    body .form_section .contact_button:hover {
-      background-color: white;
-      color: #FFB80E; }
+  body .form_section .block_button {
+    margin-top: 30px; }
+    body .form_section .block_button .rdv_button {
+      background-color: #FFB80E;
+      color: white;
+      border: 2px solid #FFB80E; }
+      body .form_section .block_button .rdv_button:hover {
+        background-color: transparent; }
+    body .form_section .block_button .contact_button {
+      background: none;
+      color: white;
+      border: 2px solid white; }
+      body .form_section .block_button .contact_button:hover {
+        background-color: white;
+        color: #FFB80E; }
 
 footer {
   text-align: center;
