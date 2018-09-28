@@ -91,7 +91,7 @@ $(document).ready(function() {
         setTimeout(function(){ 
             snackbar.removeClass('success');
             snackbar.removeClass('error');
-            snackbar.className = snackbar.className.replace("show", ""); 
+            snackbar.removeClass('show'); 
         }, 3000);
      }
 
