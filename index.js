@@ -1,4 +1,18 @@
 $(document).ready(function() {
+    $.ajax({
+        url: './infos.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function(data, status){
+            console.log('SUCCESS | data : ', data, ' | statut : ', status);
+            setData(data);
+        },
+        error: function(data, status, error){
+            console.log('ERROR | data :', data, ' | status : ', status, ' | error : ', error);
+        }
+    });
+
+
     $('#mailSender').click(function(){
         console.log("terst-");
         var mail = $('#email').val();
@@ -126,6 +140,53 @@ $(document).ready(function() {
             $('#mustFieldLastname').show();
         }
     });
+
+    function setData(data){
+        var href = 'tel:'+data.result.adminTel;
+        $('.contact_button').attr('href', href);
+    }
+
+    /**
+     * smooth scroll to target
+     * @param  target  element to scroll to
+     */
+    function smoothScrollTo(target){
+        if(target.length){
+            $('html, body').stop().animate( {scrollTop: target.offset().top}, 1500 );
+        }
+    }
+
+    /**
+     * active smooth scroll for anchors in nav
+     */
+    $('.nav-link').click(function(){
+        var elementToScrolll = $($(this).attr('href'));
+        smoothScrollTo(elementToScrolll);
+    });
+
+    /**
+     * detect scroll and set animations for block_prestations
+     * reset animations when scroll to top
+     */
+    $(window).scroll(function(e){
+        if(1.05 > $(window).scrollTop() / $('#prestations').offset().top > 0.95){
+            $('.block_prestation').addClass('animated flipInY');
+        }
+
+        if($(window).scrollTop() == 0){
+            $('.block_prestation').removeClass('animated flipInY');
+        }
+    });
+
+    setInterval(function(){
+        console.log("test");
+        $('.rdv_button_animation').removeClass('animated bounce');
+    }, 3000)
+
+    setInterval(function(){
+        console.log("test");
+        $('.rdv_button_animation').addClass('animated bounce');
+    }, 3500)
 
 });
 

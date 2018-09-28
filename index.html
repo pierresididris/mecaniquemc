@@ -10,79 +10,33 @@
 
 	<link rel="stylesheet" href="css/master.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="animate.css">
 
 
 </head>
 <header>
-		<div class="info">
-			<span class="cel">contactez-nous au 056.256.25.15</span>
-			<span class="loc">localisation :</span>
-			<span class="hor">horaires :</span>
-		</div>
+	<div class="info">
+		<span class="cel">contactez-nous au 056.256.25.15</span>
+		<span class="loc">localisation :</span>
+		<span class="hor">horaires :</span>
+	</div>
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar_logo" href="#"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-				<a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
-				<a class="nav-item nav-link" href="#">Nos prestations</a>
-				<a class="nav-item nav-link" href="#">Prendre rdv</a>
-				<a class="nav-item nav-link disabled" href="#">Contact</a>
-				</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar_logo" href="#"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+			<a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+			<a class="nav-item nav-link" href="#prestations">Nos prestations</a>
+			<a class="nav-item nav-link rdv_button" data-toggle="modal" data-target="#exampleModal">
+				Prendre rendez-vous
+			</a>
+			<a class="nav-item nav-link disabled contact_button" href="#">Contact</a>
 			</div>
-		</nav>
-
-		<style>
-			/* The snackbar - position it at the bottom and in the middle of the screen */
-			#snackbar {
-				visibility: hidden; /* Hidden by default. Visible on click */
-				min-width: 250px; /* Set a default minimum width */
-				margin-left: -125px; /* Divide value of min-width by 2 */
-				background-color: #d4edda; /* Black background color */
-				color: #155724; /* White text color */
-				border-color: #c3e6cb;
-				text-align: center; /* Centered text */
-				border-radius: 2px; /* Rounded borders */
-				padding: 16px; /* Padding */
-				position: fixed; /* Sit on top of the screen */
-				z-index: 1; /* Add a z-index if needed */
-				left: 90%; /* Center the snackbar */
-				bottom: 30px; /* 30px from the bottom */
-			}
-
-			/* Show the snackbar when clicking on a button (class added with JavaScript) */
-			#snackbar.show {
-				visibility: visible; /* Show the snackbar */
-				/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
-			However, delay the fade out process for 2.5 seconds */
-			-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-			animation: fadein 0.5s, fadeout 0.5s 2.5s;
-			}
-
-			/* Animations to fade the snackbar in and out */
-			@-webkit-keyframes fadein {
-				from {bottom: 0; opacity: 0;} 
-				to {bottom: 30px; opacity: 1;}
-			}
-
-			@keyframes fadein {
-				from {bottom: 0; opacity: 0;}
-				to {bottom: 30px; opacity: 1;}
-			}
-
-			@-webkit-keyframes fadeout {
-				from {bottom: 30px; opacity: 1;} 
-				to {bottom: 0; opacity: 0;}
-			}
-
-			@keyframes fadeout {
-				from {bottom: 30px; opacity: 1;}
-				to {bottom: 0; opacity: 0;}
-			}
-		</style>
+		</div>
+	</nav>
 </header>
 
 <body>
@@ -102,8 +56,8 @@
 				</div>	
 				<div class="row">
 					<div class="block_button col-12">
-						<button type="button" class="btn btn-primary rdv_button" data-toggle="modal" data-target="#exampleModal">prendre rdv</button>
-						<button type="button" class="btn btn-primary contact_button">nous contacter</button>
+						<button type="button" class="btn btn-primary rdv_button rdv_button_animation" data-toggle="modal" data-target="#exampleModal">prendre rdv</button>
+						<a href="" class="btn btn-primary contact_button">nous contacter</a>
 					</div>
 				</div>
 			</div>
@@ -118,7 +72,7 @@
 		<section class="colaborator">
 
 		</section>
-		<section class="our_prestation">
+		<section class="our_prestation" id="prestations">
 			<div class="block_title">
 				<div class="container">
 					<div class="row">
@@ -233,10 +187,10 @@
 					</div>	
 				</div>
 						<div class="block_button col-12">
-							<button type="button" class="btn btn-primary rdv_button" data-toggle="modal" data-target="#exampleModal">
+							<button type="button" class="btn btn-primary rdv_button rdv_button_animation" data-toggle="modal" data-target="#exampleModal">
 									Prendre rdv
 							</button>
-							<button type="button" class="btn btn-primary btn-2 contact_button">Nous contacter</button>
+							<a href="" class="btn btn-primary btn-2 contact_button">Nous contacter</a>
 						</div>
 			</div>
 
@@ -338,4 +292,4 @@
 <script src="jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="mailSender.js"></script>
+<script src="index.js"></script>
