@@ -5,6 +5,7 @@ class Settings{
     private $adminMail = 'beaug867@gmail.com';
     private $adminPwd = 'M1234567890M';
     private $smtpHost = 'smtp.gmail.com';
+    private $adminTel = '0256.256.12.53';
 
     public function getHost(){
         return $this->host;
@@ -20,5 +21,9 @@ class Settings{
 
     public function getSmtpHost(){
         return $this->smtpHost;
+    }
+
+    public function getAdminTel(){
+        return $this->adminTel;
     }
 }

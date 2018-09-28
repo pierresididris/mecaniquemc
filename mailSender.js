@@ -1,4 +1,18 @@
 $(document).ready(function() {
+    $.ajax({
+        url: './infos.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function(data, status){
+            console.log('SUCCESS | data : ', data, ' | statut : ', status);
+            setData(data);
+        },
+        error: function(data, status, error){
+            console.log('ERROR | data :', data, ' | status : ', status, ' | error : ', error);
+        }
+    });
+
+
     $('#mailSender').click(function(){
         console.log("terst-");
         var mail = $('#email').val();
@@ -126,6 +140,11 @@ $(document).ready(function() {
             $('#mustFieldLastname').show();
         }
     });
+
+    function setData(data){
+        var href = 'tel:'+data.result.adminTel;
+        $('.contact_button').attr('href', href);
+    }
 
 });
 
