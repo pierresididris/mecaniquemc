@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#mailSender').click(function(){
+        console.log("terst-");
         var mail = $('#email').val();
         var phone = $('#phone').val();
         
@@ -29,6 +30,8 @@ $(document).ready(function() {
             $('#messageModalRdv').removeClass('alert alert-danger');
             $('#messageModalRdv').text("");
 
+            console.log($('#extraInfo').val());
+
             $.ajax({
                 url: './mailSender.php',
                 type: 'POST',
@@ -53,6 +56,8 @@ $(document).ready(function() {
                     console.log('ERROR | data :', data, ' | status : ', status, ' | error : ', error);
                 }
             })
+        }else{
+            console.log('bizarre');
         }
      });
 

@@ -21,19 +21,68 @@
 		</div>
 
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar_logo" href="#"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				  <div class="navbar-nav">
-					<a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link" href="#">Nos prestations</a>
-					<a class="nav-item nav-link" href="#">Prendre rdv</a>
-					<a class="nav-item nav-link disabled" href="#">Contact</a>
-				  </div>
+			<a class="navbar_logo" href="#"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+				<a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" href="#">Nos prestations</a>
+				<a class="nav-item nav-link" href="#">Prendre rdv</a>
+				<a class="nav-item nav-link disabled" href="#">Contact</a>
 				</div>
-			  </nav>
+			</div>
+		</nav>
+
+		<style>
+			/* The snackbar - position it at the bottom and in the middle of the screen */
+			#snackbar {
+				visibility: hidden; /* Hidden by default. Visible on click */
+				min-width: 250px; /* Set a default minimum width */
+				margin-left: -125px; /* Divide value of min-width by 2 */
+				background-color: #d4edda; /* Black background color */
+				color: #155724; /* White text color */
+				border-color: #c3e6cb;
+				text-align: center; /* Centered text */
+				border-radius: 2px; /* Rounded borders */
+				padding: 16px; /* Padding */
+				position: fixed; /* Sit on top of the screen */
+				z-index: 1; /* Add a z-index if needed */
+				left: 90%; /* Center the snackbar */
+				bottom: 30px; /* 30px from the bottom */
+			}
+
+			/* Show the snackbar when clicking on a button (class added with JavaScript) */
+			#snackbar.show {
+				visibility: visible; /* Show the snackbar */
+				/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+			However, delay the fade out process for 2.5 seconds */
+			-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			}
+
+			/* Animations to fade the snackbar in and out */
+			@-webkit-keyframes fadein {
+				from {bottom: 0; opacity: 0;} 
+				to {bottom: 30px; opacity: 1;}
+			}
+
+			@keyframes fadein {
+				from {bottom: 0; opacity: 0;}
+				to {bottom: 30px; opacity: 1;}
+			}
+
+			@-webkit-keyframes fadeout {
+				from {bottom: 30px; opacity: 1;} 
+				to {bottom: 0; opacity: 0;}
+			}
+
+			@keyframes fadeout {
+				from {bottom: 30px; opacity: 1;}
+				to {bottom: 0; opacity: 0;}
+			}
+		</style>
 </header>
 
 <body>
@@ -190,108 +239,94 @@
 							<button type="button" class="btn btn-primary btn-2 contact_button">Nous contacter</button>
 						</div>
 			</div>
+
+			<div id="snackbar">Demande envoyée</div>
 			
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<<<<<<< HEAD
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Prendre rendez-vous pour votre véhicule</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p id="messageModalRdv"></p>
-					<form type="post">
-						<div class="form-group">
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Prendre rendez-vous pour votre véhicule</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p id="messageModalRdv"></p>
+						<form type="post">
+							<div class="form-group">
 
-							<div class="row item-form">
-								<div class="col-11">
-									<input type="email" class="form-control" id="email" placeholder="e-mail">
+								<div class="row item-form">
+									<div class="col-11">
+										<input type="email" class="form-control" id="email" placeholder="e-mail">
+									</div>
+									<div class="col-1 mustField" id="mustFieldEmail">
+										*
+									</div>
 								</div>
-								<div class="col-1 mustField" id="mustFieldEmail">
-									*
-								</div>
-							</div>
 
-							<div class="row item-form">
-								<div class="col-11">
-									<input type="text" class="form-control" id="phone" placeholder="numéro de téléphone">
+								<div class="row item-form">
+									<div class="col-11">
+										<input type="text" class="form-control" id="phone" placeholder="numéro de téléphone">
+									</div>
+									<div class="col-1 mustField" id="mustFieldPhone">
+										*
+									</div>
 								</div>
-								<div class="col-1 mustField" id="mustFieldPhone">
-									*
-								</div>
-							</div>
 
-							<div class="row item-form">
-								<div class="col-11">
-									<select id="gender" class="form-control">
-										<option value="Mr">Mr</option>
-										<option value="Mme">Mme</option>
+								<div class="row item-form">
+									<div class="col-11">
+										<select id="gender" class="form-control">
+											<option value="Mr">Mr</option>
+											<option value="Mme">Mme</option>
+										</select>
+									</div>
+									<div class="col-1 mustField">
+										
+									</div>
+								</div>
+
+								<div class="row item-form">
+									<div class="col-11">
+										<input type="text" class="form-control" id="lastname" placeholder="Nom">
+									</div>
+									<div class="col-1 mustField" id="mustFieldLastname">
+										*
+									</div>
+								</div>
+
+								<div class="row item-form">
+									<div class="col-11">
+										<input type="text" class="form-control" id="firstname" placeholder="Prénom">
+									</div>
+									<div class="col-1 mustField" id="mustFieldFirstname">
+										*
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleFormControlSelect1">Raison du rendez-vous</label>
+									<select class="form-control" id="goal" id="exampleFormControlSelect1">
+									<option>Vidange</option>
+									<option>Panne</option>
+									<option>Changement de pneus</option>
+									<option>changement courroie</option>
+									<option>Autre</option>
 									</select>
 								</div>
-								<div class="col-1 mustField">
-									
+								<div class="form-group">
+									<label for="exampleFormControlTextarea1">Détail</label>
+									<textarea class="form-control" id="extraInfo" rows="3"></textarea>
 								</div>
-							</div>
+								</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+						<button type="button" class="btn btn-primary" id="mailSender">Envoyer</button>
+					</div>
+				</div>
+			</div>
 
-							<div class="row item-form">
-								<div class="col-11">
-									<input type="text" class="form-control" id="lastname" placeholder="Nom">
-								</div>
-								<div class="col-1 mustField" id="mustFieldLastname">
-									*
-								</div>
-							</div>
-
-							<div class="row item-form">
-								<div class="col-11">
-									<input type="text" class="form-control" id="firstname" placeholder="Prénom">
-								</div>
-								<div class="col-1 mustField" id="mustFieldFirstname">
-									*
-								</div>
-=======
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-					<form>
-							<div class="form-group">
-								<label for="exampleFormControlInput1">Votre adresse mail</label>
-								<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
->>>>>>> a0c822a420241494e8578b369836a69834dc7044
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Raison du rendez-vous</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-								<option>Vidange</option>
-								<option>Panne</option>
-								<option>Changement de pneus</option>
-								<option>changement courroie</option>
-								<option>Autre</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlTextarea1">Détail</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-							</div>
-							</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-					<button type="button" class="btn btn-primary">Envoyer</button>
-				</div>
-				</div>
-			</div>
-			</div>
 		</section>
 </body>
 <footer>
@@ -300,6 +335,7 @@
 </footer>
 </html>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="mailSender.js"></script>
