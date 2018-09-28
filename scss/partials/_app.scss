@@ -221,28 +221,7 @@ body{
                 }
             }
         }
-        // @media (min-width: 768px) {
-        //     .block-title{
-        //         .block_content{
-        //             .content{
-        //                 margin: 0px;
-        //             }
-        //         }
-        //     }
-        //     .edito{
-        //         text-align: left;
-        //         margin-bottom: 50px;
-        //     }
-        //     .block_prestation{
-        //         .title{
-        //             padding-left: 15px;
-        //         }
-        //         .text{
-        //             text-align: left;
-        //             padding: 5px 15px 15px 15px !important;
-        //         }
-        //     }
-        // }
+        
         
     }
     .form_section{
@@ -325,6 +304,21 @@ body{
         position: absolute;
         margin: 80% 10% 10%80%;
     }
+    
+    .btn-sending{
+        text-transform: uppercase;
+        font-family: $font-family-1;
+        font-weight: 500;
+        background-color: $color-1;
+        color: white;
+        border: 2px solid $color-1;
+        &:hover{
+            background-color: transparent;
+            border: 2px solid $color-1;
+            color: $color-1;
+        }
+}
+
 }
 footer{
     text-align: center;
