@@ -31,6 +31,10 @@ header{
         background: url(../img/logo.jpg)no-repeat center ; 
         -webkit-background-size: cover; /* pour anciens Chrome et Safari */
         background-size: cover;
+        @media (min-width: 768px) {
+            height: 80px;
+            width: 150px;
+        }
     }
     .navbar-brand{
        text-transform: uppercase;
@@ -49,7 +53,6 @@ header{
             font-family: $font-family-1;
             text-transform: uppercase;
             font-weight: 500;
-
             &:hover{
                 color: $color-1 !important;
             } 
@@ -57,12 +60,19 @@ header{
                 color: $color-1 !important;
             }
         }
+        @media (min-width: 992px) {
+            .navbar-nav{
+                float: right;
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
     }
 }
 body{
     .presentation{
         text-align: center;
-        padding: 20px 0 0 0;
+        padding: 40px 0 0 0;
         background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/garett-mizunaka-15709-unsplash.jpg)no-repeat center ; 
         -webkit-background-size: cover; /* pour anciens Chrome et Safari */
         background-size: cover; /* version standardisée */
@@ -75,23 +85,25 @@ body{
         h2{
             color: white;
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
+            font-size: 14px;
             font-family: $font-family-1;
-            font-size: 17px;
+                text-transform: uppercase;
+                font-weight: 500;
         }
         h1{
             text-transform: uppercase;
-            // font-size: 40px !important;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-family: $font-family-1;
-            font-weight: 600;
-
+                text-transform: uppercase;
+                font-weight: 500;
         }
         p{
             font-family: $font-family-2;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            font-family: $font-family-2;
         }
         .block_button{
             margin-bottom: 30px;
@@ -102,6 +114,9 @@ body{
                 background-color: $color-1;
                 color: white;
                 border: 2px solid $color-1;
+                font-family: $font-family-1;
+                text-transform: uppercase;
+                font-weight: 500;
                 &:hover{
                     background-color: transparent;
                 }
@@ -113,6 +128,9 @@ body{
                 background: none;
                 color: white;
                 border: 2px solid white;
+                font-family: $font-family-1;
+                text-transform: uppercase;
+                font-weight: 400;
                 &:hover{
                     background-color: white;
                     color: $color-1;
@@ -120,14 +138,14 @@ body{
             }
         }
         @media (min-width: 768px) {
-            padding: 100px 0px 0px 0px;
-            text-align: left;
+            text-align-last: left;
+            p{
+                text-align: justify;
+            }
         }
-
     }
-    .colaborator{
-        background: red;
-    }
+    // .colaborator{
+    // }
     .our_prestation{
         // text-align: center;
         .block_title{
@@ -180,7 +198,43 @@ body{
             }
         }
         p{
+            font-family: $font-family-2;
             color: darkslategrey;
+            @media (min-width: 768px) {
+                text-align-last: left;
+                text-align: justify;
+            }
+        }
+        .block_prestation{
+            margin-bottom: 20px;
+            .content{
+                border-radius: 5px;
+                padding: 0 15px;
+                margin: 5px;
+                -moz-box-shadow: 0px 0px 10px 5px #cfcfcf;
+                -webkit-box-shadow: 0px 0px 10px 5px #cfcfcf;
+                -o-box-shadow: 0px 0px 10px 5px #cfcfcf;
+                box-shadow: 0px 0px 10px 5px #cfcfcf;
+                filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=NaN, Strength=10);
+                .logo{
+                    margin: auto;
+                    padding: 10px;
+                    height: 110px;
+                    width: 110px;
+                    img{
+                        max-width: 100%;
+                    }
+                } 
+                .title{
+                    font-family: $font-family-2;
+                    text-align: left;
+
+                }
+                .text{
+                    font-family: $font-family-2;
+                    text-align: left;
+                }
+            }
         }
         .block_prestation{
             margin-bottom: 20px;
@@ -232,20 +286,30 @@ body{
         background-size: cover; /* version standardisée */
         h1{
             color: white;
+            font-family: $font-family-1;
             text-transform: uppercase;
+            font-weight: 500;
             margin-bottom: 20px;
             font-family: $font-family-1;
             font-weight: 600;
         }
-        .ask{
-            color: white;
-            
-        }
-        .answer{
-            margin-bottom: 20px;
-            color: white;
-            .color{
-                color: $color-1;
+        .form_ask{
+            margin: auto;
+            .ask{
+                color: white;
+                font-family: $font-family-2;
+    
+                
+            }
+            .answer{
+                margin-bottom: 20px;
+                color: white;
+                font-family: $font-family-2;
+    
+                .color{
+                    cursor: pointer;
+                    color: $color-1;
+                }
             }
         }
         .block_button{
@@ -257,6 +321,9 @@ body{
                 background-color: $color-1;
                 color: white;
                 border: 2px solid $color-1;
+                font-family: $font-family-1;
+                text-transform: uppercase;
+                font-weight: 500;
                 &:hover{
                     background-color: transparent;
                 }
@@ -317,19 +384,18 @@ body{
             border: 2px solid $color-1;
             color: $color-1;
         }
+    }
 }
 
-}
+
 footer{
     text-align: center;
     background: black;
     span{
         color: white;
+        font-family: $font-family-2;
+
     }
 }
 
 
-// @media (min-width: $screen-sm) {
-// }
-//  @media (min-width: $screen-md) {
-// }
