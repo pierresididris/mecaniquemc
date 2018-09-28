@@ -2,8 +2,8 @@
 
 class Settings{
     private $host = 'localhost';
-    private $adminMail = 'beaug867@gmail.com';
-    private $adminPwd = 'M1234567890M';
+    private $adminMail = '';
+    private $adminPwd = '';
     private $smtpHost = 'smtp.gmail.com';
     private $adminTel = '0256.256.12.53';
 
