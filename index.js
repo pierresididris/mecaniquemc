@@ -195,7 +195,7 @@ $(document).ready(function() {
      */
     function smoothScrollTo(target){
         if(target.length){
-            $('html, body').stop().animate( {scrollTop: target.offset().top}, 1500 );
+            $('html, body').stop().animate( {scrollTop: target.offset().top}, 400 );
         }
     }
 
