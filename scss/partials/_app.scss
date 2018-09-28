@@ -391,9 +391,6 @@ body{
         visibility: hidden; /* Hidden by default. Visible on click */
         min-width: 250px; /* Set a default minimum width */
         margin-left: -125px; /* Divide value of min-width by 2 */
-        background-color: #d4edda; /* Black background color */
-        color: #155724; /* White text color */
-        border-color: #c3e6cb;
         text-align: center; /* Centered text */
         border-radius: 2px; /* Rounded borders */
         padding: 16px; /* Padding */
@@ -401,6 +398,18 @@ body{
         z-index: 1; /* Add a z-index if needed */
         left: 90%; /* Center the snackbar */
         bottom: 30px; /* 30px from the bottom */
+    }
+
+    #snackbar.success { 
+        background-color: #d4edda; /* Black background color */
+        color: #155724; /* White text color */
+        border-color: #c3e6cb;
+    }
+
+    #snackbar.error {
+        background-color: #f8d7da; /* Black background color */
+        color: #721c24; /* White text color */
+        border-color: #f5c6cb;
     }
 
     /* Show the snackbar when clicking on a button (class added with JavaScript) */

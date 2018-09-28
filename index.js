@@ -62,12 +62,12 @@ $(document).ready(function() {
                 success: function(data, status){
                     console.log('SUCCESS | data : ', data, ' | statut : ', status);
                     $('#exampleModal').modal('toggle');
-                    var snackbar = document.getElementById("snackbar");
-                    snackbar.className = "show";
-                    setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+                    showSnackbar('Demande envoyée', true);
                 },
                 error: function(data, status, error){
-                    console.log('ERROR | data :', data, ' | status : ', status, ' | error : ', error);
+                    console.log('ERROR | data :', data, ' | status : ', status, ' | error : ', error);                    
+                    $('#exampleModal').modal('toggle');
+                    showSnackbar('Echec de l\'envoie', false);
                 }
             })
         }else{
@@ -75,16 +75,48 @@ $(document).ready(function() {
         }
      });
 
+     /**
+      * show snackbar
+      */
+     function showSnackbar(message, success){
+        var snackbar = $('#snackbar');
+        snackbar.addClass('show');
+        snackbar.append(message)
+        if(success){
+            snackbar.addClass('success');
+        }
+        if(!success){
+            snackbar.addClass('error')
+        }
+        setTimeout(function(){ 
+            snackbar.removeClass('success');
+            snackbar.removeClass('error');
+            snackbar.className = snackbar.className.replace("show", ""); 
+        }, 3000);
+     }
+
+     /**
+      * return true if the given email is a email
+      * @param  email 
+      */
     function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
 
+    /**
+     * return true if the given string is a phone number
+     * @param  phone phone number
+     */
     function validatePhone(phone){
         var re = /^\d{10}$/;
         return re.test(phone);
     }
 
+    /**
+     * formate phone number into xx.xx.xx.xx.xx
+     * @param  phone 
+     */
     function formatePhone(phone){
         var phoneFormated = [];
         phoneFormated.push(phone.slice(0,2));
@@ -104,11 +136,18 @@ $(document).ready(function() {
         return phone;
     }
 
+    /**
+     * display message error for form
+     * @param  message message to display
+     */
     function displayErrorRdv(message){
         $('#messageModalRdv').attr('class', 'alert alert-danger')
         $('#messageModalRdv').text(message);
     }
 
+    /**
+     * Display * for form depending if condition is validate or not
+     */
     $('#email').keyup(function(){
         if(validateEmail($('#email').val())){
             $('#mustFieldEmail').hide();
@@ -141,6 +180,10 @@ $(document).ready(function() {
         }
     });
 
+    /**
+     * map data with dom
+     * @param data settings
+     */
     function setData(data){
         var href = 'tel:'+data.result.adminTel;
         $('.contact_button').attr('href', href);
@@ -178,13 +221,14 @@ $(document).ready(function() {
         }
     });
 
+    /**
+     * Animation for button "rendez-vous"
+     */
     setInterval(function(){
-        console.log("test");
         $('.rdv_button_animation').removeClass('animated bounce');
     }, 3000)
 
     setInterval(function(){
-        console.log("test");
         $('.rdv_button_animation').addClass('animated bounce');
     }, 3500)
 
